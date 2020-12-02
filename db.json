@@ -1,0 +1,54 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "cars":[
+    {
+      "make": "VW",
+      "model": "Caddy",
+      "type": "utilities",
+      "year": 2010,
+      "kilometrage": 150000,
+      "cylinders": 4,
+      "horsepower": 75,
+      "price": 20000,
+      "ownerphone": 65564589
+    },
+    {
+      "make": "sdfsdffgdf",
+      "model": "Caddy",
+      "type": "utilities",
+      "year": 2010,
+      "kilometrage": 150000,
+      "cylinders": 4,
+      "horsepower": 75,
+      "price": 20000,
+      "ownerphone": 65564589
+    },
+    {
+      "make": "dfgdfgdfszezezr5",
+      "model": "Caddy",
+      "type": "utilities",
+      "year": 2010,
+      "kilometrage": 150000,
+      "cylinders": 4,
+      "horsepower": 75,
+      "price": 20000,
+      "ownerphone": 65564589
+    }
+  ]
+}

@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+.topnav a:hover {
+  border-bottom: 3px solid red;
+}
+body {
+  background-image: url("assets/background.jpg");
+  background-color: #cccccc;
+}
+
