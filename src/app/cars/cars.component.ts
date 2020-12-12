@@ -11,12 +11,17 @@ export class CarsComponent implements OnInit {
   cars;
   details = false;
   selectedCar;
+  total;
+  page: number = 1;
 
   constructor(private carsService: CarService) { }
 
   ngOnInit(): void {
     this.carsService.getAllCars().subscribe(
-      (data) => {this.cars = data;},
+      (data) => {
+        this.cars = data;
+        this.total = data.length;
+        },
     (error) => console.log(error)
     );
   }

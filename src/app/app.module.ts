@@ -13,7 +13,8 @@ import { AddCarComponent } from './add-car/add-car.component';
 import { UpdateCarComponent } from './update-car/update-car.component';
 import { SearchComponent } from './search/search.component';
 import { ColorPickerModule } from 'ngx-color-picker';
-//import { RangeSlider } from 'svelte-range-slider-pips';
+import { NgxPaginationModule } from 'ngx-pagination'
+//import { RangeSlider } from '';
 
 
 
@@ -35,6 +36,7 @@ import { ColorPickerModule } from 'ngx-color-picker';
     ReactiveFormsModule,
     AppRoutingModule,
     ColorPickerModule,
+    NgxPaginationModule
  //   RangeSlider
   ],
   providers: [],

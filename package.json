@@ -22,7 +22,9 @@
     "bootstrap": "^4.5.3",
     "jquery": "^3.5.1",
     "ngx-color-picker": "^10.1.0",
+    "ngx-pagination": "^5.0.0",
     "rxjs": "~6.5.4",
+    "svelte-range-slider-pips": "^1.5.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },
@@ -42,7 +44,6 @@
     "karma-jasmine": "~3.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
     "protractor": "~7.0.0",
-    "svelte-range-slider-pips": "^1.5.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~3.8.3"
