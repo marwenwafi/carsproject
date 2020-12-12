@@ -11,4 +11,5 @@ export class Car {
   ownerphone: number;
   likes: number;
   color: string;
+  image: string;
 }

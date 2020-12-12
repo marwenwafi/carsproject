@@ -12,6 +12,7 @@ export class AddCarComponent implements OnInit {
 
   cartypes;
   color;
+  imgSrc;
 
   constructor(private fb: FormBuilder, private carservice: CarService, private route: Router) { }
 
@@ -26,7 +27,8 @@ export class AddCarComponent implements OnInit {
       cylinders: ['', [Validators.required, Validators.min(1), Validators.max(24)]],
       horsepower: ['', [Validators.required, Validators.min(10), Validators.max(3000)]],
       price: ['', [Validators.required]],
-      ownerphone: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(8)]]
+      ownerphone: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(8)]],
+      image: ['', [Validators.required]]
     });
 
   get controls() {
@@ -51,5 +53,23 @@ export class AddCarComponent implements OnInit {
 
   updateColor($event: string) {
     this.modelForm.patchValue({color: $event});
+  }
+
+  onFileChange(event) {
+
+    const reader = new FileReader();
+
+    if (event.target.files && event.target.files.length) {
+
+      const [image] = event.target.files;
+
+      reader.readAsDataURL(image);
+
+      reader.onload = () => {
+
+        this.imgSrc = reader.result as string;
+        this.modelForm.patchValue({image: reader.result as string});
+      };
+    }
   }
 }

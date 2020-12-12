@@ -81,6 +81,13 @@
           </td>
           <div *ngIf="controls.ownerphone.invalid">ownerphone invalid</div>
         </tr>
+        <tr>
+          <td>Image</td>
+          <td>
+            <input type="file" id="file" class="form-control" placeholder="Image" formControlName="image" (change)="onFileChange($event)">
+            <img [src]="imgSrc" *ngIf="imgSrc" style="height: 250px; width:250px">
+          </td>
+        </tr>
 
       </table>
       <input type="submit" [disabled]="modelForm.invalid" (click)="addCar(modelForm.value)">
@@ -88,4 +95,5 @@
     </fieldset>
 
   </form>
+
 </div>

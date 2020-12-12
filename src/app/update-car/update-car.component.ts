@@ -15,6 +15,7 @@ export class UpdateCarComponent implements OnInit {
   car;
   color;
   likes;
+  imgSrc;
 
   constructor(private fb: FormBuilder, private carservice: CarService, private router: Router, private route: ActivatedRoute) { }
 
@@ -29,7 +30,8 @@ export class UpdateCarComponent implements OnInit {
       cylinders: ['', [Validators.required, Validators.min(1), Validators.max(12)]],
       horsepower: ['', [Validators.required, Validators.min(10), Validators.max(1500)]],
       price: ['', [Validators.required]],
-      ownerphone: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(8)]]
+      ownerphone: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(8)]],
+      image: ['', [Validators.required]]
     });
 
   get controls() {
@@ -44,6 +46,7 @@ export class UpdateCarComponent implements OnInit {
         this.car = data;
         this.likes = this.car.likes;
         this.color = this.car.color;
+        this.imgSrc = this.car.image;
         this.modelForm.patchValue(this.car);
       },
       (error => console.log(error))
@@ -55,15 +58,40 @@ export class UpdateCarComponent implements OnInit {
   }
 
   updateCar(car){
-    car.likes = this.likes;
-    this.carservice.updateCar(this.id, car).subscribe(res => {
-      alert('Car Updated Successfully');
-      this.router.navigateByUrl('/allcars');
-    });
+    if (this.modelForm.dirty)
+    {
+      car.likes = this.likes;
+      car.image = this.imgSrc;
+      this.carservice.updateCar(this.id, car).subscribe(res => {
+        alert('Car Updated Successfully');
+        this.router.navigateByUrl('/allcars');
+      });
+    }
   }
 
   updateColor($event: string) {
     this.modelForm.patchValue({color: $event});
+  }
+
+  onFileChange(event) {
+
+    const reader = new FileReader();
+
+    if (event.target.files && event.target.files.length) {
+
+      const [image] = event.target.files;
+
+      reader.readAsDataURL(image);
+
+
+      reader.onload = () => {
+
+        console.log(reader.result as string);
+        this.imgSrc = reader.result as string;
+        this.modelForm.patchValue({image: reader.result as string});
+
+      };
+    }
   }
 
 }

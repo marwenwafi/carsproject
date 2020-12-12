@@ -25,4 +25,10 @@ export class CarsComponent implements OnInit {
     this.details = !this.details;
     this.selectedCar = car;
   }
+
+  processLike($event: any) {
+    this.carsService.updateCar($event.id, $event).subscribe(res => {
+      alert('Car Liked');
+    });
+  }
 }

@@ -1,4 +1,5 @@
 <app-navigation-bar></app-navigation-bar>
+<app-search></app-search>
 <div class="container2">
   <div class="left-column">
     <h2 class="text-white">List of all available cars:</h2>
@@ -17,7 +18,7 @@
     </div>
   </div>
   <div class="right-column">
-    <app-car *ngIf="details" [currentCar]="selectedCar"></app-car>
+    <app-car *ngIf="details" [currentCar]="selectedCar" (increaseLike)="processLike($event)"></app-car>
   </div>
 
 </div>

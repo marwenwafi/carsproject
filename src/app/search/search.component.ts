@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CarService} from '../shared/car.service';
 
 @Component({
   selector: 'app-search',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  cartypes;
+
+  constructor(private carservice: CarService) { }
 
   ngOnInit(): void {
+    this.carservice.getAllCarTypes().subscribe(
+      (data) => {this.cartypes = data['types'];} ,
+      (error) => console.log(error)
+    );
   }
 
 }
