@@ -9,14 +9,20 @@ import {CarService} from '../shared/car.service';
 export class CarsComponent implements OnInit {
 
   cars;
+  details = false;
+  selectedCar;
 
   constructor(private carsService: CarService) { }
 
   ngOnInit(): void {
     this.carsService.getAllCars().subscribe(
-      (data) => {this.cars = data},
+      (data) => {this.cars = data;},
     (error) => console.log(error)
     );
   }
 
+  showDetails(car) {
+    this.details = !this.details;
+    this.selectedCar = car;
+  }
 }

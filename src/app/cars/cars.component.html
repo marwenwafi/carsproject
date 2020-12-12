@@ -1,24 +1,23 @@
 <app-navigation-bar></app-navigation-bar>
-<div class="container">
-  <h2 class="text-white">List of all available cars:</h2>
-  <div class="row">
-  <div class="col-md-3" *ngFor="let car of cars">
-      <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <div class="product-bottom text-center">
-            <h4>Make: {{car.make}}</h4>
-            <h5>Model: {{car.model}}</h5>
-            <h5>Type: {{car.type}}</h5>
-            <h5>Year: {{car.year}}</h5>
-            <h5>Kilometrage: {{car.kilometrage}}</h5>
-            <h5>Cylinders: {{car.cylinders}}</h5>
-            <h5>Horsepower: {{car.horsepower}}</h5>
-            <h5>Price: {{car.price}}</h5>
-            <h5>Owner's Phone: {{car.ownerphone}}</h5>
+<div class="container2">
+  <div class="left-column">
+    <h2 class="text-white">List of all available cars:</h2>
+    <div class="row">
+      <div class="col-md-3" *ngFor="let car of cars">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <div class="product-bottom text-center">
+              <h4>Make: {{car.make}}</h4>
+              <h5>Model: {{car.model}}</h5>
+              <button (click)="showDetails(car)">Show details</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <div class="right-column">
+    <app-car *ngIf="details" [currentCar]="selectedCar"></app-car>
+  </div>
+
 </div>

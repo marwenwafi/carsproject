@@ -16,19 +16,18 @@
   "profile": {
     "name": "typicode"
   },
-  "cars":[
+  "carTypes": {
+    "types": [
+      "Sedan",
+      "Coupe",
+      "Commercial",
+      "PickUp",
+      "Van"
+    ]
+  },
+  "cars": [
     {
-      "make": "VW",
-      "model": "Caddy",
-      "type": "utilities",
-      "year": 2010,
-      "kilometrage": 150000,
-      "cylinders": 4,
-      "horsepower": 75,
-      "price": 20000,
-      "ownerphone": 65564589
-    },
-    {
+      "id": 2,
       "make": "sdfsdffgdf",
       "model": "Caddy",
       "type": "utilities",
@@ -40,15 +39,78 @@
       "ownerphone": 65564589
     },
     {
-      "make": "dfgdfgdfszezezr5",
-      "model": "Caddy",
-      "type": "utilities",
-      "year": 2010,
-      "kilometrage": 150000,
-      "cylinders": 4,
-      "horsepower": 75,
-      "price": 20000,
-      "ownerphone": 65564589
+      "make": "dgj",
+      "model": "kjldfg",
+      "type": "dfg",
+      "year": "1529",
+      "kilometrage": "32121345",
+      "cylinders": "3",
+      "horsepower": "541",
+      "price": "22000",
+      "ownerphone": "5465412",
+      "id": 5
+    },
+    {
+      "make": "klfgjklfg ",
+      "model": "dfklgdjkfg",
+      "type": "Coupe",
+      "year": "1990",
+      "kilometrage": "100",
+      "cylinders": "5",
+      "horsepower": "56",
+      "price": "50694",
+      "ownerphone": "65556561",
+      "id": 6
+    },
+    {
+      "make": "klfgjklfg ",
+      "model": "dfklgdjkfg",
+      "type": "Coupe",
+      "year": "1990",
+      "kilometrage": "100",
+      "cylinders": "5",
+      "horsepower": "56",
+      "price": "50694",
+      "ownerphone": "65556561",
+      "id": 7
+    },
+    {
+      "make": "dfgdifjg",
+      "model": "jldfljkg",
+      "type": "Coupe",
+      "year": "2000",
+      "kilometrage": "32",
+      "cylinders": "12",
+      "horsepower": "456",
+      "price": "456412",
+      "ownerphone": "12345678",
+      "id": 8
+    },
+    {
+      "make": "dgj",
+      "model": "kjldfg",
+      "type": "dfg",
+      "year": "1960",
+      "kilometrage": "321213",
+      "cylinders": "3",
+      "horsepower": "541",
+      "price": "22000",
+      "ownerphone": "54654125",
+      "id": 9
+    },
+    {
+      "make": "sdfsdf",
+      "model": "jklsdjflk",
+      "type": "Coupe",
+      "color": "#a00000",
+      "year": "2000",
+      "kilometrage": "56456",
+      "cylinders": "12",
+      "horsepower": "654",
+      "price": "6498712",
+      "ownerphone": "12156547",
+      "likes": 10,
+      "id": 10
     }
   ]
 }

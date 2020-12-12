@@ -1,4 +1,5 @@
 export class Car {
+  id: number;
   make: string;
   model: string;
   type: string;
@@ -8,4 +9,6 @@ export class Car {
   horsepower: number;
   price: number;
   ownerphone: number;
+  likes: number;
+  color: string;
 }

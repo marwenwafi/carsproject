@@ -1,0 +1,90 @@
+<app-navigation-bar></app-navigation-bar>
+<div class="container bg-light">
+  <form [formGroup]="modelForm">
+    <fieldset>
+      <legend>
+        Update a Car:
+      </legend>
+      <table>
+        <tr>
+          <td>Make</td>
+          <td>
+            <input type="text" formControlName="make">
+          </td>
+          <div *ngIf="controls.make.invalid">make invalid</div>
+        </tr>
+        <tr>
+          <td>Model</td>
+          <td>
+            <input type="text" formControlName="model">
+          </td>
+          <div *ngIf="controls.model.invalid">model invalid</div>
+        </tr>
+        <tr>
+          <td>Type</td>
+          <td>
+            <select class="custom-select" formControlName="type">
+              <option value="" disabled>Choose your city</option>
+              <option *ngFor="let type of cartypes" [ngValue]="type">{{type}}</option>
+            </select>
+          </td>
+          <div *ngIf="controls.type.invalid">type invalid</div>
+        </tr>
+        <tr>
+          <td>Color</td>
+          <td>
+            <input [(colorPicker)]="color" [style.background]="color" (colorPickerChange)="updateColor($event)"/>
+          </td>
+          <div *ngIf="color">{{color}}</div>
+          <div *ngIf="controls.color.invalid">color invalid</div>
+        </tr>
+        <tr>
+          <td>Year</td>
+          <td>
+            <input type="text" formControlName="year">
+          </td>
+          <div *ngIf="controls.year.invalid">year invalid</div>
+        </tr>
+        <tr>
+          <td>Kilometrage</td>
+          <td>
+            <input type="text" formControlName="kilometrage">
+          </td>
+          <div *ngIf="controls.kilometrage.invalid">Kilometrage invalid</div>
+        </tr>
+        <tr>
+          <td>Cylinders</td>
+          <td>
+            <input type="text" formControlName="cylinders">
+          </td>
+          <div *ngIf="controls.cylinders.invalid">cylinders invalid</div>
+        </tr>
+        <tr>
+          <td>Horsepower</td>
+          <td>
+            <input type="text" formControlName="horsepower">
+          </td>
+          <div *ngIf="controls.horsepower.invalid">Horsepower invalid</div>
+        </tr>
+        <tr>
+          <td>Price</td>
+          <td>
+            <input type="text" formControlName="price">
+          </td>
+          <div *ngIf="controls.price.invalid">price invalid</div>
+        </tr>
+        <tr>
+          <td>Owner's phone</td>
+          <td>
+            <input type="text" formControlName="ownerphone">
+          </td>
+          <div *ngIf="controls.ownerphone.invalid">ownerphone invalid</div>
+        </tr>
+
+      </table>
+      <input type="submit" [disabled]="modelForm.invalid" (click)="updateCar(modelForm.value)">
+
+    </fieldset>
+
+  </form>
+</div>
