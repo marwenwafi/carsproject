@@ -1,25 +1,31 @@
-<div class="container">
-  <div class="row">
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <div class="product-bottom text-center">
-          <h4>Make: {{currentCar.make}}</h4>
-          <h5>Model: {{currentCar.model}}</h5>
-          <h5>Type: {{currentCar.type}}</h5>
-          <h5>Year: {{currentCar.year}}</h5>
-          <h5>Kilometrage: {{currentCar.kilometrage}}</h5>
-          <h5>Cylinders: {{currentCar.cylinders}}</h5>
-          <h5>Horsepower: {{currentCar.horsepower}}</h5>
-          <h5>Price: {{currentCar.price}}</h5>
-          <h5>Owner's Phone: {{currentCar.ownerphone}}</h5>
-          <h5>Number of likes: {{currentCar.likes}}</h5>
-          <img [src]="currentCar.image" style="height: 250px; width:250px"/>
-          <button (click)="addLike()" [disabled]="liked">Like</button>
-          <a routerLink="../updatecar/{{currentCar.id}}"><button>Update</button></a>
-          <button (click)="deleteCar(currentCar.id)">Delete</button>
-        </div>
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Car Details</h4>
+      </div>
+      <div class="modal-body">
+        <img [src]="currentCar.image" style="height: 250px; width:250px"/>
+        <h4>Make: {{currentCar.make}}</h4>
+        <h5>Model: {{currentCar.model}}</h5>
+        <h5>Type: {{currentCar.type}}</h5>
+        <h5>Year: {{currentCar.year}}</h5>
+        <h5>Kilometrage: {{currentCar.kilometrage}}</h5>
+        <h5>Cylinders: {{currentCar.cylinders}}</h5>
+        <h5>Horsepower: {{currentCar.horsepower}}</h5>
+        <h5>Price: {{currentCar.price}}</h5>
+        <h5>Owner's Phone: {{currentCar.ownerphone}}</h5>
+        <h5>Number of likes: {{currentCar.likes}}</h5>
+        <button (click)="addLike()" [disabled]="liked" class="btn-info">Like</button>
+        <a routerLink="../updatecar/{{currentCar.id}}" data-dismiss="modal"><button>Update</button></a>
+        <button (click)="deleteCar(currentCar.id)" data-dismiss="modal" class="btn-danger">Delete</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
+
   </div>
 </div>

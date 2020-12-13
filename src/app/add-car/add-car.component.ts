@@ -44,6 +44,7 @@ export class AddCarComponent implements OnInit {
 
   addCar(car){
     car.likes=0;
+    car.image = this.imgSrc;
     this.carservice.addCar(car).subscribe(res => {
       alert("New Car added");
       this.route.navigateByUrl('/allcars');

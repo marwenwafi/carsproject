@@ -52,7 +52,7 @@ export class CarService {
   getByCriterias(list: any[], criterias: string[], values: any[]) {
     let i = 0;
     for (const c of criterias) {
-      list = list.filter(v => v[c].includes(values[i]));
+      list = list.filter(v => v[c].toLowerCase().includes(values[i].toLowerCase()));
       i++;
     }
     return list;
