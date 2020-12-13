@@ -8,8 +8,9 @@ import {Observable} from 'rxjs';
 })
 export class CarService {
 
-  carsUrl: string = 'http://localhost:3000/cars';
-  carTypesUrl: string = 'http://localhost:3000/cartypes';
+  carsUrl = 'http://localhost:3000/cars';
+  carTypesUrl = 'http://localhost:3000/cartypes';
+  cars;
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -32,7 +33,6 @@ export class CarService {
 
   getCarById(c: Car | number): Observable<Car>{
     const id = typeof c === 'number' ? c : c.id;
-    console.log("inside service: "+c);
     return this.http.get<Car>(this.carsUrl + '/' + c);
   }
 
@@ -48,4 +48,18 @@ export class CarService {
     const id = typeof car === 'number' ? car : car.id;
     return this.http.delete<Car>(this.carsUrl + '/' + id);
   }
+
+  getByCriterias(list: any[], criterias: string[], values: any[]) {
+    let i = 0;
+    for (const c of criterias) {
+      list = list.filter(v => v[c].includes(values[i]));
+      i++;
+    }
+    return list;
+  }
+
+  getByCriteria(list: any[], critiria: string, value: any) {
+    return list.filter(v => v[critiria].includes(value));
+  }
+
 }

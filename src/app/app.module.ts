@@ -11,9 +11,8 @@ import { CarComponent } from './car/car.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddCarComponent } from './add-car/add-car.component';
 import { UpdateCarComponent } from './update-car/update-car.component';
-import { SearchComponent } from './search/search.component';
 import { ColorPickerModule } from 'ngx-color-picker';
-import { NgxPaginationModule } from 'ngx-pagination'
+import { NgxPaginationModule } from 'ngx-pagination';
 //import { RangeSlider } from '';
 
 
@@ -26,8 +25,7 @@ import { NgxPaginationModule } from 'ngx-pagination'
     CarsComponent,
     CarComponent,
     AddCarComponent,
-    UpdateCarComponent,
-    SearchComponent
+    UpdateCarComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +35,6 @@ import { NgxPaginationModule } from 'ngx-pagination'
     AppRoutingModule,
     ColorPickerModule,
     NgxPaginationModule
- //   RangeSlider
   ],
   providers: [],
   bootstrap: [AppComponent]
